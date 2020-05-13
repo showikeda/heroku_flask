@@ -12,8 +12,8 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-ACCESS_TOKEN = ""
-SECRET = ""
+ACCESS_TOKEN = "UKMyofIFSpSLi1Ag5saBzSp4yHYtChPrCv9z9b3e3AYx2uvaDib/s21uV3axVERQ6GM5WjbDS4kTV+QBP2R3Y3Hkd7PgZOhy+TYZOPacRK7+si+UagkvvbWOgjpFJQ6IH+YrB797dPd5GZqiChA1qAdB04t89/1O/w1cDnyilFU="
+SECRET = "d4295de78cd39c615fb7783d78ed9076"
 
 line_bot_api = LineBotApi(ACCESS_TOKEN)
 handler = WebhookHandler(SECRET)
