@@ -10,25 +10,25 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage
 )
 
+
 app = Flask(__name__)
 
-ACCESS_TOKEN = "UKMyofIFSpSLi1Ag5saBzSp4yHYtChPr" \
-               "Cv9z9b3e3AYx2uvaDib/s21uV3axVER" \
-               "Q6GM5WjbDS4kTV+QBP2R3Y3Hkd7PgZOhy+TYZOPac" \
-               "RK7+si+UagkvvbWOgjpFJQ6IH+YrB797dPd5G" \
-               "ZqiChA1qAdB04t89/1O/w1cDnyilFU="
-SECRET = "d4295de78cd39c615fb7783d78ed9076"
+ACCESS_TOKEN = 'ThEtSeZxHCbGW6sBSxKmfFNh5fLgKmGD1EBpx5' \
+               '00p/uxETHM/sNcZ7QlnCNx3+166GM5WjbDS4kTV+QB' \
+               'P2R3Y3Hkd7PgZOhy+TYZOPacRK7dTb+19jXWnyUhIS' \
+               'oTQROP8zFJkceANdWEPo+UwTHrqwdB04t89/1O/w1cDnyilFU='
+SECRET = 'd4295de78cd39c615fb7783d78ed9076'
 
 line_bot_api = LineBotApi(ACCESS_TOKEN)
 handler = WebhookHandler(SECRET)
 
 
-@app.route('/callback', methods=['POST'])
+@app.route("/callback", methods=['POST'])
 def callback():
     signature = request.headers['X-Line-Signature']
 
     body = request.get_data(as_text=True)
-    app.logger.info("Request body: " + body)
+    app.logger.info('Request body: ' + body)
 
     try:
         handler.handle(body, signature)
